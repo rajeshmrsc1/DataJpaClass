@@ -3,6 +3,8 @@ package com.example.demo.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,10 +21,17 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @RestController //Https + java to json + @Component
 @RequestMapping("/user")
+@ConfigurationProperties(prefix="my.app")
 public class UserController {
+	
+	private Integer id;
+	private String code;
 
 	@Autowired
-	UserIService userIService;
+	private UserIService userIService;
+	
+	@Value("${app.name}")
+	private String appName;
 	
 	@GetMapping(value = "/{id}")
 	User getUserById(@PathVariable Integer id){
@@ -32,7 +41,7 @@ public class UserController {
 	
 	@GetMapping(value = "/getall")
 	List<User> getUsers(){
-		
+		System.out.println(appName + id + code);
 		log.info("INFO");  //info	WARN	error
 		log.debug("debug");//info  	debug	WARN	ERROR
 		log.warn("warn");  //WARN	ERROR

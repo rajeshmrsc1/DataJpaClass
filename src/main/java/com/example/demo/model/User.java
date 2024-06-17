@@ -21,7 +21,7 @@ public class User {
 	String address;
 	Integer age;
 	Long phoneNo;
-	
+	String email;
 	@ElementCollection
 	List<String> stuLang;
 	
