@@ -8,32 +8,32 @@ public class HomeController {
 
 	@GetMapping("/home")
 	public String showHome() {
-		return "HomePage";
+		return "Home";
 	}
 	
 	@GetMapping("/welcome")
 	public String showWelcome() {
-		return "WelcomePage";
+		return "Welcome";
 	}
 	 
 	@GetMapping("/admin")
 	public String showAdmin() {
-		return "AdminPage";
+		return "Admin";
 	}
 	
 	@GetMapping("/emp")
 	public String showEmp() {
-		return "EmployeePage";
+		return "Employee";
 	}
 	
 	@GetMapping("/std")
 	public String showStd() {
-		return "StudentPage";
+		return "Student";
 	}
 	
 	@GetMapping("/denied")
 	public String showDenied() {
-		return "DeniedPage";
+		return "Denied";
 	}
 	
 }

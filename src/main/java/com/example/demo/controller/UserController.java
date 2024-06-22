@@ -64,7 +64,7 @@ public class UserController {
 	}
 	
 	@PutMapping(value = "/")
-	User Update(@RequestBody User user){
+	User update(@RequestBody User user){
 		return userIService.saveUser(user);
 	}
 	
