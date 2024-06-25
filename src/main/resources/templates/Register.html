@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+	<head>
+		<title>Page Title</title>
+		<meta charset="ISO-8859-1"></meta>
+	</head>
+	<body>
+	
+	<h1>Register Page</h1>
+	<form th:action="@{/save}" method="post">
+	  <label for="name">Name:</label><br>
+	  <input type="text" id="name" name="name"><br>
+	  
+	  <label for="address">Address:</label><br>
+	  <input type="text" id="address" name="address"><br>
+	  
+	  <label for="age">Age:</label><br>
+	  <input type="number" id="age" name="age"><br>
+	  
+	  <label for="phoneNo">Phone No:</label><br>
+	  <input type="number" id="phoneNo" name="phoneNo"><br>
+	  
+	  <label for="email">Email:</label><br>
+	  <input type="email" id="email" name="email"><br>
+	  
+	  <label for="password">Password:</label><br>
+	  <input type="password" id="password" name="password"><br>
+	  
+	  <label for="lname">User Role:</label><br>
+	  <label for="email">ADMIN:</label>
+	  <input type="radio" name="userRole" value="ADMIN"/><br>
+	  <label for="email">EMPLOYEE:</label>
+	  <input type="radio" name="userRole" value="EMPLOYEE"/><br>
+	  <label for="email">STUDENT:</label>
+	  <input type="radio" name="userRole" value="STUDENT"/><br>
+	  <br><br>
+	  
+	  <div th:if="${msg != null}">
+	  	<div th:text = "${msg}"></div> 
+	  </div>
+	  
+	  <input type="submit" value="Register">
+	</form> 
+	
+	</body>
+</html>

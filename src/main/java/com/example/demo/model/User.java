@@ -1,8 +1,5 @@
 package com.example.demo.model;
 
-import java.util.List;
-
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -22,7 +19,9 @@ public class User {
 	Integer age;
 	Long phoneNo;
 	String email;
-	@ElementCollection
-	List<String> stuLang;
+	String password;
+	String userRole;
+//	@ElementCollection
+//	List<String> stuLang;
 	
 }

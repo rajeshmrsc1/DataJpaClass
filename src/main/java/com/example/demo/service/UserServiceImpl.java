@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.dao.UserIRepo;
@@ -45,6 +46,9 @@ public class UserServiceImpl implements UserIService {
 
 	@Override
 	public User saveUser(User user) {
+		
+		BCryptPasswordEncoder enc = new BCryptPasswordEncoder();
+		user.setPassword(enc.encode(user.getPassword()));
 		User savedUser = userIRepo.save(user);//will get id here
 		
 
