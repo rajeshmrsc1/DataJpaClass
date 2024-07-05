@@ -82,4 +82,5 @@ public class HomeController {
 		model.addAttribute("msg", "User has been create and user id is : " + id);
 		return "Register";
 	}
+	
 }
